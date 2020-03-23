@@ -1,0 +1,19 @@
+version: 0.2
+env:
+  variables:
+    LC_ALL: en_US.UTF-8
+    LANGUAGE: en_US.UTF-8
+    LANG: en_US.UTF-8
+phases:
+  build:
+    commands:
+      - echo Running build
+      - bundle install
+      - bundle exec jekyll build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Deploying to S3
+      - echo "******** Uploading to S3 ********"
+      - aws s3 sync _site/ s3://kyle-news
+      - aws cloudfront create-invalidation --distribution-id E190VF14Y5KRBB --paths "/*"
