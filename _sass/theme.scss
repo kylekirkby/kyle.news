@@ -1,0 +1,124 @@
+@import "animate";
+
+@mixin dropdownAnimation() {
+  @extend .animated;
+  @extend .swing;
+}
+body {
+  font-family: "Quicksand" !important;
+  // background-image: url("/assets/images/bg-noise.png") !important;
+  background-repeat: repeat;
+}
+#root {
+
+.social_media_share_image {
+  height: 400px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px -14px rgba(0,0,0,0.25);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+  .home {
+    .intro-text {
+      .intro-heading {
+        margin-bottom: 0px;
+        font-weight: 300;
+      }
+      p {
+        font-size: 26px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .btn {
+    color: #fff;
+    box-shadow: 0 10px 40px -14px rgba(0,0,0,0.25);  }
+  .btn-secondary {
+    border-color: #262626;
+    background-size: 200% auto;
+    background-image: linear-gradient(
+      to right,
+      #262626 0%,
+      #4d4d4d 50%,
+      #262626 100%
+    );
+  }
+  .btn-primary {
+    border-color: #81007f;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    background-image: linear-gradient(
+      to right,
+      #87007c 0%,
+      #cd0054 50%,
+      #81007f 100%
+    );
+    transition: 0.5s;
+    &:hover {
+      background-position: right center;
+    }
+  }
+  header {
+    overflow: hidden;
+    .header__bg {
+      z-index: -1;
+      position: absolute;
+      .header__image {
+        height: 800px;
+        width: 100vw;
+        object-fit: cover;
+      }
+    }
+  }
+  #main_container {
+    background-color: white;
+  }
+}
+.logo_image {
+    filter: grayscale(1);
+    opacity: 0.3;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    object-fit: contain;
+    height: 100px;
+    transition: all 500ms ease;
+    &:hover {
+        opacity: 1;
+        filter: grayscale(0);
+        transform: scale(1.2);
+    }
+}
+
+#root .platforms {
+    background-color: #e9e9e9 !important;
+}
+.display-5   {
+
+    color: #565656;
+    font-weight: normal;
+
+}
+.circle_img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 300px;
+}
+#root a.navbar-brand {
+    color: #000;
+}
+#root header.masthead .intro-text {
+
+    padding-top: 150px;
+
+}
+.container-fluid.main {
+    margin-top:150px;
+}

@@ -1,0 +1,44 @@
+---
+layout: base
+---
+<header class="masthead home">
+    {% if page.header.background_image %}
+    <div class="header__bg">
+        {% assign header_img_path = page.header.background_image | replace:
+    '/assets/images', '' %}
+    {% picture header_image {{header_img_path}} %}
+    </div>
+    {% endif %}
+    <div class="container text-white">
+        <div class="intro-text">
+            <div class="display-4">
+                The Blog
+            </div>
+            {{page.description | markdownify}}
+        </div>
+    </div>
+</header>
+<div class="container-fluid bg-white">
+    <div class="row">
+        <div class="container my-5">
+            <div class="row">
+                {% for post in site.posts %}
+                    {% assign image_path = post.image | remove_first: "/assets/images/" %}
+                    {% capture image_alt %}{{post.title}} featured image {% endcapture %}
+                    <div class="col col-12 col-sm-4">
+                        <a href="{{post.url}}">
+                            <div class="card">
+                                {% picture card_img {{image_path}} --alt {{image_alt}} %}
+                                <div class="card-body">
+                                    <h5 class="card-title">{{post.title}}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: "%A, %B %-d, %Y"}}</h6>
+                                    <p class="card-text">{{post.description}}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

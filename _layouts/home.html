@@ -1,0 +1,80 @@
+---
+layout: base
+---
+<header class="masthead home">
+    {% if page.header.background_image %}
+    <div class="header__bg">
+        {% assign header_img_path = page.header.background_image | replace: '/assets/images', '' %}
+    {% picture header_image {{header_img_path}} %}
+    </div>
+    {% endif %}
+    <div class="container">
+        <div class="intro-text">
+            {% picture circle_img "me.jpg" %}
+            <div class="display-4">
+                {{page.header.sub_title}}
+            </div>
+            <!-- {{page.header.para | markdownify}} -->
+            <!-- <div id='beforeAndAfterContainer' class='twentytwenty-container mb-4'>
+                <img alt="Before Social Image App Image" class=""
+                    test-src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                    src='/assets/images/social-media-share-image-example-before.png'>
+                <img alt="After Social Image App Image" class=""
+                    test-src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                    src="/assets/images/social-media-image-after.png">
+            </div> -->
+            <!-- <a class="btn btn-primary btn-xl js-scroll-trigger"
+                href="{{page.header.button.url}}">{{page.header.button.title}}</a> -->
+        </div>
+    </div>
+</header>
+<div class="container-fluid platforms {% if page.header %}not_top{% endif %}">
+    <div class="row">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col col-12 text-center">
+                    <h2 class="display-5 my-4">My <em>Stack</em></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-6 col-sm-4">
+                    <img class="logo_image lazyload mx-auto d-block"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        data-src="/assets/images/ubuntu.png" />
+                </div>
+                <div class="col col-6 col-sm-4">
+                    <img class="logo_image lazyload mx-auto d-block"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        data-src="/assets/images/jsx.png" />
+                </div>
+                <div class="col col-6 col-sm-4">
+                    <img class="logo_image lazyload mx-auto d-block"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        data-src="/assets/images/react.svg" />
+                </div>
+                <div class="col col-6 col-sm-4">
+                    <img class="logo_image lazyload mx-auto d-block"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        data-src="/assets/images/aws.png" />
+                </div>
+                <div class="col col-6 col-sm-4">
+                    <img class="logo_image lazyload mx-auto d-block"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        data-src="/assets/images/sass.svg" />
+                </div>
+                <div class="col col-6 col-sm-4">
+                    <img class="logo_image lazyload mx-auto d-block"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        data-src="/assets/images/amplify.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid content {% if page.header %}not_top{% endif %}" id="main_container">
+    <div class="row" id="main_content">
+        <div class="container">
+            {{content}}
+        </div>
+    </div>
+</div>
