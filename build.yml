@@ -8,7 +8,8 @@ phases:
   build:
     commands:
       - echo Running build
-      - apt-get install webp
+      - apt-get update -y
+      - apt-get install -y webp
       - bundle install
       - bundle exec jekyll build
   post_build:
