@@ -17,7 +17,7 @@ gem "minima", "~> 2.5"
 # gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "japr"
+  gem "japr", "0.4.2"
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll_picture_tag", "1.8.0"
 end
