@@ -13,7 +13,7 @@ jobs:
 
         run: |
           docker run \
-          -v ${{ github.workspace }}/site:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+          -v ${{ github.workspace }}:/srv/jekyll \
            jekyll/jekyll:4 /bin/bash -c "chmod 777 /srv/jekyll && pwd && cd /srv/jekyll && ls && bundle install && jekyll build --future"
       - uses: jakejarvis/s3-sync-action@master
         with:
