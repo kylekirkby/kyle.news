@@ -8,21 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: helaili/jekyll-action@2.0.5
-        with:
-          build_only: true
-      # Fix timestamps
-      - name: restore timestamps
-        uses: chetan/git-restore-mtime-action@release
-      - uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --acl public-read --follow-symlinks --delete
+      - name: Build and Deploy
+        uses: kshehadeh/jekyll-s3-action@master
         env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-east-1"
-          SOURCE_DIR: "_site"
+          AWS_ACCESS_KEY_ID: ${{secrets.AWS_KEY_ID}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          S3_BUCKET_NAME: "kyle-news"
+      # - uses: jakejarvis/s3-sync-action@master
+      #   with:
+      #     args: --acl public-read --follow-symlinks --delete
+      #   env:
+      #     AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET }}
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     AWS_REGION: "us-east-1"
+      #     SOURCE_DIR: "_site"
       # Invalidate Cloudfront (this action)
       - name: invalidate
         uses: chetan/invalidate-cloudfront-action@master
