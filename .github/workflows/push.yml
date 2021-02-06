@@ -10,10 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the site in the jekyll/builder container
+
         run: |
           docker run \
           -v ${{ github.workspace }}/site:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-          jekyll/jekyll:4 /bin/bash -c "chmod 777 /srv/jekyll && bundle install && jekyll build --future"
+           jekyll/jekyll:4 /bin/bash -c "chmod 777 /srv/jekyll && pwd && cd /srv/jekyll && bundle install && jekyll build --future"
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
