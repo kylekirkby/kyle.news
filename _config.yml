@@ -4,8 +4,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   I'm Kyle. A Web Developer / Hacker / Entrepreneur. I'm based just outside of Cambridge, UK. Welcome!
 baseurl: ""
 url: "https://kyle.news" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: the_actual_kyle
+github_username: kylekirkby
 # Build settings
 defaults:
   - scope:
