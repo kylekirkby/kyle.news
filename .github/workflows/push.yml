@@ -12,11 +12,9 @@ jobs:
       - name: Build the site in the jekyll/builder container
         run: |
           docker run \
-          --volume="${{ github.workspace }}/site:/srv/jekyll" \
-          --volume="${{ github.workspace }}/_site:/srv/jekyll/_site" \
-          jekyll/jekyll:$JEKYLL_VERSION \
-          /bin/bash -c "chmod 777 /srv/jekyll && bundle install && jekyll build"
-      - uses: jakejarvis/s3-sync-action@master
+          -v ${{ github.workspace }}/site:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+          jekyll/jekyll:4 /bin/bash -c "chmod 777 /srv/jekyll && bundle install && jekyll build --future"
+        - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
