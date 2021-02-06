@@ -9,19 +9,26 @@ layout: base
     {% picture header_image {{header_img_path}} %}
     </div>
     {% endif %}
-    <div class="container text-white">
+    <div class="container text-white text-center py-5">
         <div class="intro-text">
             <div class="display-4">
-                The Blog
+                {{page.header.title}}
             </div>
             {{page.description | markdownify}}
         </div>
     </div>
 </header>
-<div class="container-fluid bg-white">
+<div class="container-fluid bg-white" id="page_content">
     <div class="row">
         <div class="container my-5">
             <div class="row">
+                <div class="col col-12">
+                    <div class="categories py-4">
+                        {% for tag in site.tags %}
+                            <a href="/feed/tags/{{tag[0] | slugify}}"><span class="badge badge-light">{{tag[0]}}</span></a>
+                        {% endfor %}
+                    </div>
+                </div>
                 {% for post in site.posts %}
                     {% assign image_path = post.image | remove_first: "/assets/images/" %}
                     {% capture image_alt %}{{post.title}} featured image {% endcapture %}

@@ -1,29 +1,29 @@
 ---
 layout: base
 ---
-<header class="masthead home">
-    <div class="header__bg">
-        {% assign header_img_path = page.image | replace:
-    '/assets/images', '' %}
+<div id="progress"></div>
+<div class="jumbotron p-0 bg-white">
+    <div class="header_image">
+        {% assign header_img_path = page.image | replace: '/assets/images', '' %}
         {% picture header_image {{header_img_path}} %}
     </div>
-    <div class="container text-white">
-        <div class="intro-text">
-            <div class="display-4">
-                {{page.title}}
-            </div>
-            {{page.description | markdownify}}
-        </div>
+    <div class="container">
+        <h1 class="display-4 py-3">{{page.title}}</h1>
+        {% if page.header.description %}<p class="lead">{{page.header.description | markdownify}}</p>{% endif %}
     </div>
-</header>
-<div class="container-fluid bg-white">
+</div>
+<div class="container-fluid bg-white" id="page_content">
     <div class="row">
-        <div class="container my-5">
+        <div class="container my-2">
+            <time>{{ page.date | date: "%A, %B %-d, %Y"}}</time>
+            <div class="categories py-4">
+                {% for tag in page.tags %}
+                    <a href="/feed/tags/{{tag | slugify}}"><span class="badge badge-light">{{tag}}</span></a>
+                {% endfor %}
+            </div>
             {{content}}
-
             <div id="disqus_thread"></div>
             <script>
-
                 /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/

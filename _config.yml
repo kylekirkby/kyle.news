@@ -22,11 +22,19 @@ picture:
   source: "assets/images"
   output: "generated"
   markup: "picture"
+blog:
+  tags:
+    url: /feed/tags/
+    title_append: " posts"
+    layout: tag.html
 highlighter: rouge
 markdown: kramdown
 kramdown:
   parse_block_html: true
-permalink: /blog/:title/
+  syntax_highlighter_opts:
+    line_class: test
+    code_class: test
+permalink: /feed/:title/
 asset_pipeline:
   bundle: true
   compress: true

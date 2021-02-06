@@ -6,11 +6,11 @@
 # - To build the 'sizes' attribute
 # - When given alternate source images, specify which sizes to generate.
 media_presets:
-  wide_desktop: 'min-width: 1801px'
-  desktop: 'max-width: 1800px'
-  wide_tablet: 'max-width: 1200px'
-  tablet: 'max-width: 900px'
-  mobile: 'max-width: 600px'
+  wide_desktop: "min-width: 1801px"
+  desktop: "max-width: 1800px"
+  wide_tablet: "max-width: 1200px"
+  tablet: "max-width: 900px"
+  mobile: "max-width: 600px"
 # Markup presets allow you to group settings together, and select one of them by name in your jekyll
 # tag. All settings are optional.
 markup_presets:
@@ -53,7 +53,7 @@ markup_presets:
   header_image:
     markup: auto
     formats: [webp, original]
-    widths: [400, 750, 1000, 1400]
+    widths: [400, 750, 1000, 1400, 1920, 2560]
     noscript: true # Default: false
     attributes:
       img: class="header__image"

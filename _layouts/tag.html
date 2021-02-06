@@ -1,0 +1,59 @@
+---
+layout: base
+---
+<header class="masthead home">
+    <div class="header__bg">
+        {% assign header_img_path = "/assets/images/blog/thunder.jpg" | replace:
+    '/assets/images', '' %}
+    {% picture header_image {{header_img_path}} %}
+    </div>
+    <div class="container text-white text-center py-5">
+        <div class="intro-text">
+            <div class="display-4">
+                {{page.title}}
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container-fluid bg-white">
+    <div class="row">
+        <div class="container my-5">
+            <div class="row">
+                {% if site.tags[page.filter_tag] %}
+                    {% for post in site.tags[page.filter_tag] %}
+                        {% assign image_path = post.image | remove_first: "/assets/images/" %}
+                        {% capture image_alt %}{{post.title}} featured image {% endcapture %}
+                        
+                            <!-- Begin post -->
+                            <div class="col col-12 col-sm-4">
+                                <a href="{{post.url}}">
+                                    <div class="card">
+                                        {% picture card_img {{image_path}} --alt {{image_alt}} %}
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{post.title}}</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: "%A, %B %-d, %Y"}}</h6>
+                                            <p class="card-text">{{post.description}}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- End post -->
+                            {% unless forloop.last %}<hr>{% endunless %}
+                    {% endfor %}
+                {% else %}
+                    <h2>No posts to display.</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <!-- Begin blog articles -->
+        <section class="col-md-7">
+            
+        </section>
+        <!-- End blog articles -->
+    </div>
+</div>

@@ -24,8 +24,6 @@
   .login {
     text-transform: uppercase;
     .btn {
-
-
       font-weight: 600 !important;
     }
   }
@@ -49,7 +47,7 @@
     transition: width 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
     background-size: 200% auto;
     height: 100%;
-    z-index:-1;
+    z-index: -1;
     border-radius: 5px;
     content: "";
     position: absolute;
@@ -69,20 +67,18 @@
   }
 
   .nav-link-ltr:hover {
-    color:white !important;
+    color: white !important;
     &::before {
       width: 100%;
       background-position: right center;
-
     }
   }
   #mainNav {
-    background-color:white;
+    background-color: white;
   }
   #mainNav.navbar-shrink {
     background-color: white;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-
   }
   #mainNav.navbar-shrink {
     @include media-breakpoint-up(md) {

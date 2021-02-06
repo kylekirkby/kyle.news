@@ -1,6 +1,7 @@
-$(document).ready(function() {
+$(function () {
+  $("#progress").progress();
   // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
     if (
       location.pathname.replace(/^\//, "") ==
         this.pathname.replace(/^\//, "") &&
@@ -11,7 +12,7 @@ $(document).ready(function() {
       if (target.length) {
         $("html, body").animate(
           {
-            scrollTop: target.offset().top - 54
+            scrollTop: target.offset().top - 54,
           },
           1000,
           "easeInOutExpo"
@@ -22,14 +23,14 @@ $(document).ready(function() {
   });
 
   // Closes responsive menu when a scroll trigger link is clicked
-  $(".js-scroll-trigger").click(function() {
+  $(".js-scroll-trigger").click(function () {
     $(".navbar-collapse").collapse("hide");
   });
 
   var animated = 0;
   var shrunk = false;
   // Collapse Navbar
-  var navbarCollapse = function() {
+  var navbarCollapse = function () {
     if ($("#mainNav").offset().top > 0) {
       $("#mainNav").addClass("navbar-shrink");
       shrunk = true;
@@ -40,7 +41,7 @@ $(document).ready(function() {
       }
       $(".get_started > .btn").bind(
         "animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-        function() {
+        function () {
           $(this).removeClass("animated tada");
         }
       );
@@ -51,4 +52,12 @@ $(document).ready(function() {
   navbarCollapse();
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
+  if ($("div.highlighter-rouge").length > 0) {
+    $("div.highlighter-rouge").each(function () {
+      let classList = $(this).attr("class");
+      let lang = classList.split("language-")[1].split(" ")[0];
+      let div = $(this).find(":first-child");
+      div.prepend(`<span class="lang_id">${lang}</span>`);
+    });
+  }
 });

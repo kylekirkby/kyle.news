@@ -15,7 +15,7 @@ jobs:
           docker run \
           -v ${{ github.workspace }}:/srv/jekyll \
            jekyll/builder:4 /bin/bash -c "chmod 777 /srv/jekyll && apk --no-cache add \
-          imagemagick && pwd && cd /srv/jekyll && ls && bundle install && bundle exec jekyll build --future"
+          imagemagick && pwd && cd /srv/jekyll && ls && bundle install && bundle exec jekyll build --future -V --trace"
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
