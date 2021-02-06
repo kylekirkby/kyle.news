@@ -15,7 +15,7 @@ I'm a:
 Some of my interests:
 
 - Building things
-- Astronomy/astrophotography/space & the universe in general :)
+- Astronomy/Astrophotography/space & the universe in general :)
 - Ethical Hacking / CompSec
 - Reading
 - Cars
