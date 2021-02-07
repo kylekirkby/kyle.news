@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+description: A little about me...
 ---
 I'm a:
 

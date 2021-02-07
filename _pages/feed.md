@@ -5,6 +5,6 @@ description: >
 permalink: /feed/
 layout: blog
 header:
-    title: Feed
-    background_image: /assets/images/blog/thunder.jpg
+    title: Blog
+    background_image: /assets/images/blog/M42-43-NGC-1977.jpg
 ---

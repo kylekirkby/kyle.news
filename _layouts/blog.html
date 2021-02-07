@@ -11,9 +11,9 @@ layout: base
     {% endif %}
     <div class="container text-white text-center py-5">
         <div class="intro-text">
-            <div class="display-4">
+            <h1 class="display-4">
                 {{page.header.title}}
-            </div>
+            </h1>
             {{page.description | markdownify}}
         </div>
     </div>
@@ -25,19 +25,20 @@ layout: base
                 <div class="col col-12">
                     <div class="categories py-4">
                         {% for tag in site.tags %}
-                            <a href="/feed/tags/{{tag[0] | slugify}}"><span class="badge badge-light">{{tag[0]}}</span></a>
+                            <a href="/feed/tags/{{tag[0] | slugify}}"><span class="badge-light">{{tag[0]}}</span></a>
                         {% endfor %}
                     </div>
                 </div>
                 {% for post in site.posts %}
                     {% assign image_path = post.image | remove_first: "/assets/images/" %}
                     {% capture image_alt %}{{post.title}} featured image {% endcapture %}
-                    <div class="col col-12 col-sm-4">
+                    <div class="col col-12 col-sm-6 col-lg-4 ">
                         <a href="{{post.url}}">
-                            <div class="card">
+                            <div class="card my-3">
                                 {% picture card_img {{image_path}} --alt {{image_alt}} %}
                                 <div class="card-body">
                                     <h5 class="card-title">{{post.title}}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">{% include read_time.html content=post.content %}</h6>
                                     <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: "%A, %B %-d, %Y"}}</h6>
                                     <p class="card-text">{{post.description}}</p>
                                 </div>

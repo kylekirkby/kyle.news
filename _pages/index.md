@@ -4,10 +4,8 @@ title: Kyle News
 permalink: /
 header:
   title: Kyle News
-  sub_title: Hacking and Thinking.
-#   para: |-
-#     fg
-  # background_image: /assets/images/social-media.jpg
+  sub_title: Web Developer, Hacker & Entrepreneur.
+  background_image: /assets/images/blog/M42-43-NGC-1977.jpg
 description: >
-  Start generating your social media share images today! Facebook, Twitter, YouTube, Pinterest and LinkedIn share images can be generated automatically with the social image app. Giving you more time to work on building your business!
+  Web Developer, Hacker & Entrepreneur.
 ---

@@ -16,6 +16,7 @@ layout: base
     <div class="row">
         <div class="container my-2">
             <time>{{ page.date | date: "%A, %B %-d, %Y"}}</time>
+            {% include read_time.html content=page.content %}
             <div class="categories py-4">
                 {% for tag in page.tags %}
                     <a href="/feed/tags/{{tag | slugify}}"><span class="badge badge-light">{{tag}}</span></a>

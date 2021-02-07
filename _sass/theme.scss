@@ -48,10 +48,42 @@ img.header__image {
   object-fit: cover;
   width: 100%;
 }
+#root #mainNav.background_image {
+  background-color: transparent;
+  a.nav-link {
+    color: white;
+    opacity: 1;
+    font-weight: bold;
+  }
+  a.navbar-brand {
+    color: white;
+    font-weight: bolder;
+  }
+  &.navbar-shrink {
+    background-color: white;
+    a.nav-link {
+      color: black;
+      opacity: 0.8;
+      font-weight: normal;
+    }
+    a.navbar-brand {
+      color: black;
+      font-weight: normal;
+    }
+  }
+}
+
 #page_content {
   font-size: 1.5rem;
   @include media-breakpoint-down(sm) {
     font-size: 1rem;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 20px 0;
   }
   ol li,
   ul li {
@@ -149,8 +181,9 @@ img.header__image {
     .header__bg {
       z-index: -1;
       position: absolute;
+      height: 100%;
       .header__image {
-        height: 800px;
+        height: 100%;
         width: 100vw;
         object-fit: cover;
       }
