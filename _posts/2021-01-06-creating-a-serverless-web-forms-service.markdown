@@ -28,7 +28,7 @@ As a result there are now many form SaaS products out there that can handle the 
 
 At Linaro, our main website ([Linaro.org](https://www.linaro.org)) is a static Jekyll website that is being statically served from an S3 bucket with a Cloudfront distribution in front of it enabling global edge requests/caching.
 
-On this site we've got a few forms and over the years we've tried various solutions ranging from CognitoForms to simply `mailto:` links. Recently we've been using an Atlassian Jira Form Plugin, but with recent news regarding Atlassian killing off their server product, we've had to build our own solution as the plugin was either not availble in the Cloud version or stupidly expensive.
+On this site we've got a few forms and over the years we've tried various solutions ranging from CognitoForms to simply `mailto:` links. Recently we've been using an Atlassian Jira Form Plugin, but with recent news regarding Atlassian killing off their server product, we've had to build our own solution as the plugin was either not available in the Cloud version or stupidly expensive.
 
 So we decided to put some time into building a simple serverless forms solution that would:
 
