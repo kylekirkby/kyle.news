@@ -4,10 +4,11 @@ title: About
 permalink: /about/
 description: A little about me...
 ---
+
 I'm a:
 
-- Web Developer @ [Linaro](https://www.linaro.org/)
-- Entrepreneur currently working on [Social Image App](https://www.socialimage.app)
+- Senior Web Developer @ [Linaro](https://www.linaro.org/)
+- Working [Social Image](https://www.socialimage.app) in my spare time
 - Hacker
 - Magician/Illusionist
 - Thinker
@@ -20,7 +21,6 @@ Some of my interests:
 - Ethical Hacking / CompSec
 - Reading
 - Cars
-- Cycling
 - Gaming
 - Playing with Cards (Magic/Illusions/Cardistry)
 
